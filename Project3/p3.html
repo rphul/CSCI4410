@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <title>This text is the title of the document</title>
+  <meta charset="utf-8">
+    
+  <script>
+      function initiate(){
+        var button = document.getElementById('save');
+        button.addEventListener('click', newitem);
+        
+        var button2 = document.getElementById('clear');
+        button2.addEventListener('click',Clear);
+	
+	read();
+      }
+      function newitem(){
+        var keyword = document.getElementById('user').value;
+        var value = document.getElementById('message').value;
+        sessionStorage.setItem(keyword, value);
+        
+        var box = document.getElementById('text');
+        box.innerHTML = '<p>' + keyword + '</p>' + '<p>' + value + '</p>';
+        
+	/*var data = new FormData();
+  data.append('user', keyword);
+  data.append('message', value);
+
+  var url = "./cgi-bin/cgi.py";
+  var request = new XMLHttpRequest();
+  request.addEventListener('load', show);
+  console.log("post " + url);
+  request.open("POST", url, true);
+  request.send(data);*/
+	//window.location = "./cgi-bin/cgi.py";
+	
+	//read();
+      }
+      function read(){
+      var url = "msgs.txt";
+	var request = new XMLHttpRequest();
+	request.addEventListener('load',show);
+	request.open("GET",url,true);
+	request.send(null);
+      }
+      
+      function show(event){
+	var data = event.target;
+	var databox = document.getElementById('databox');
+	console.log("show status " + data.status);
+	if (data.status == 0 || data.status == 200) {
+		databox.innerHTML = "<H1> Posted Messages </H1> " + data.responseText;}
+      
+        
+        //var value = sessionStorage.getItem(keyword);
+        //databox.innerHTML += '<div>' + keyword + ' - ' + value + '</div>';
+	//window.location = "./messages.txt";
+      }
+      function Clear(){
+      sessionStorage.clear();
+        /*var keyword = document.getElementById('user');
+        var value = document.getElementById('message');
+        keyword.value = "";
+        value.value = "";*/
+      }
+      
+		addEventListener('load', initiate);
+  </script>
+
+
+    <style>
+    
+          #formbox {
+           float: left;
+           padding: 20px;
+           border: 1px solid #999999;
+      	  }
+          #databox {
+            float: left;
+            width: 400px;
+            margin-left: 20px;
+            /*padding: 20px;*/
+            border: 1px solid #999999;
+          }
+          #user, #message {
+            width: 200px;
+          }
+          #databox > div {
+            /*padding: 5px;*/
+            /*border-bottom: 1px solid #999999;*/
+          }
+          #text {
+          font: bold 12px Verdana, sans-serif;
+          }
+          .boxed {
+          	  background-color:red;
+              border: 1px solid green ;
+              width:100px;
+              height:100px;
+              text-align:center;
+              animation: myanimation 2s ease-in-out 0s 2 normal none;
+          }
+          @keyframes myanimation {
+            0% {
+           }
+           25% {
+              transform: translateX(75px) rotate(30deg);
+           }
+            50% {
+              transform: translateX(125px) rotate(-30deg);
+
+           }
+            100% {
+              transform:translateX(200px) rotate(30deg);
+           }
+            .boxed2 {
+              border: 1px solid green ;
+              width:100px;
+              height:100px;
+              text-align:center;
+              animation: myanimation 2s ease-in-out 0s 2 normal none;
+          }
+       
+          /* animation property is a shorthand property for eight properties:
+                 animation-name
+                 animation-duration
+                 animation-timing-function
+                 animation-delay
+                 animation-iteration-count
+                 animation-direction
+                 animation-fill-mode
+                 animation-play-state
+          */
+    </style>
+
+</head>
+
+<body>
+
+  <section>
+      <div class="boxed" id="text">
+      	  Hello!
+      </div>
+  </section>
+  
+ 
+  <section id="formbox">
+      <form name="form" method = "get" action = "./cgi-bin/cgi2.py">
+          <p><label>User: <input type="text" name="user" id="user"></label></p>
+          
+          <p><label>Message: <textarea name="message" id="message"></textarea></label></p>
+          
+          <p><button type="submit" id="save">Save</button>
+          <button type="button" id="clear">Clear</button></p>
+          
+      </form>
+  </section>
+
+  
+  
+  <section id="databox">
+    	  <h3> Messages Posted</h3>
+  </section>
+
+</body>
+</html>
