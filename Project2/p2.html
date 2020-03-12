@@ -1,0 +1,383 @@
+<!doctype html>
+
+<html>
+
+
+
+<head>
+
+<style>
+
+.grid-container {
+
+  display: grid;
+
+  grid-template-columns: 40px 150px auto 150px;
+
+  grid-template-rows: 40px 40px 40px 40px auto auto auto;
+
+  grid-gap: 2px;
+
+  background-color: #000000;
+
+  padding: 5px;
+
+  height:100vh;
+
+}
+
+
+
+.grid-container > div {
+
+  text-align: center;
+
+  
+
+  padding: 20px 0;
+
+  font-size: 20px;
+
+}
+
+
+
+.item1 {
+
+background-color: #ff3300;
+
+
+
+grid-column: 1;
+
+  grid-row: 5 / span all;
+
+}
+
+.item2 {
+
+width = 150px;
+
+background-color: #FFE4B5;
+
+	grid-column:2;
+
+	grid-row:1 / span all;
+
+    writing-mode: horizontal-rl;
+
+    text-orientation:upright;
+
+    }
+
+    
+
+.item4 {
+
+background-color:#ffff99;
+
+	grid-column: 4;
+
+	grid-row: 1 / span all
+
+    }
+
+    
+
+.item3 {
+
+background-color:#ADD8E6;
+
+grid-column:3;
+
+grid-row:1 / span 6;
+
+}
+
+
+
+
+
+    
+
+.item5 {
+
+grid-column:3;
+
+grid-row: 7 / span all;
+
+background-color:#98FB98;
+
+}
+
+
+
+.img1 {
+
+grid-column:1;
+
+grid-row:1;
+
+}
+
+
+
+.img2 {
+
+grid-column:1;
+
+grid-row:2;
+
+}
+
+
+
+.img3 {
+
+grid-column:1;
+
+grid-row:3;
+
+}
+
+
+
+.img4 {
+
+grid-column:1;
+
+grid-row:4;
+
+}
+
+    
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+<script> 
+
+document.getElementById("button1").addEventListener("click",Click1());
+
+
+
+
+
+function Click1() {
+
+var element = document.getElementById("myDiv");
+
+if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px"){
+
+	 element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 150px";}
+
+/*else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 150px"){
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px";}
+
+else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 40px"){
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 40px";}
+
+else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 150px"){
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px";}*/
+
+    
+
+    
+
+    
+
+    }
+
+    
+
+document.getElementById("button2").addEventListener("click",Click2());
+
+
+
+
+
+function Click2() {
+
+var element = document.getElementById("myDiv");
+
+if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px"){
+
+	 element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 40px";}
+
+/*else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 40px"){
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 150px";}
+
+else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px")
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 40px";
+
+else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 40px"){
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px";}*/
+
+    }
+
+    
+
+document.getElementById("button3").addEventListener("click",Click3());
+
+
+
+
+
+function Click3() {
+
+var element = document.getElementById("myDiv");
+
+if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px"){
+
+	 element.style.grid = "40px 40px 40px 40px 270px auto auto / 40px 150px auto 150px";}
+
+/*else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 40px"){
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 40px auto 150px";}
+
+else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px")
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 40px";
+
+else if (element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 40px"){
+
+	element.style.grid = "40px 40px 40px 40px auto auto auto / 40px 150px auto 150px";}*/
+
+    }
+
+    
+
+    
+
+/*var elem2 = document.getElementsByClassName("item2")[0];
+
+    elem2.style = "writing-mode:vertical-rl";
+
+    elem2.style = "text-orientation:sideways";*/
+
+ 	
+
+    
+
+    
+
+    
+
+	
+
+    
+
+</script>
+
+
+
+
+
+
+
+<div class="grid-container" id="myDiv">
+
+  <div class="item1">1</div>
+
+
+
+  <div class="item2">
+
+<button id = "button1" onclick = "Click1()"><img src="collapse_btn.png"></button>
+
+Hierarchy</div>
+
+
+
+  <div class="item3">Build</div>  
+
+
+
+  <div class="item4">
+
+<button id="button2" onclick = "Click2()">
+
+<img src="collapse_btn.png"></button>
+
+Inspector</div>
+
+
+
+  <div class="item5">
+
+<button id="button3" onclick="Click3()">
+
+<img src="collapse_btn.png"></button>
+
+Assets</div>
+
+
+
+<div class="img1"> <img src="menu_btn1.png"> </div>
+
+<div class="img2"> <img src="menu_btn2.png"> </div>
+
+<div class="img3"> <img src="menu_btn3.png"> </div>
+
+<div class="img4"> <img src="menu_btn4.png"> </div>
+
+
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
