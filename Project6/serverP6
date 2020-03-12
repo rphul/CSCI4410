@@ -1,0 +1,84 @@
+#!usr/bin/node
+const WebSocketServer = require('ws').Server;
+
+const https = require('https');
+const WebSocket = require('ws');
+
+const wss = new WebSocketServer( { port: 5929 } );
+
+wss.on('listening', function() {
+    console.log("listening on port 5929");
+});
+
+var players = [];
+
+console.log("server running:");
+
+wss.on('connection', function(ws) {
+	var i = players.length;
+	//var i = sizeof(arr)/sizeof(int);
+	players.push(ws);
+	
+	console.log("connection made");
+	//console.log(i);
+	
+	/*ws.on('message', function(charMsg) {
+        console.log("charmsg: ",charMsg);
+        //if (charMsg == "hello") {
+            ws.send("hello human");
+        //}
+	
+	});*/
+	
+	/*ws.on('message', function incoming(data) {
+		console.log(data);
+		ws.send(data);
+	});
+	
+	ws.on('open', function open() {
+	  ws.send('something');
+	});*/
+	
+	//wss.onopen = () => ws.send('hello');
+	
+	
+	/*ws.on('new player',function () {
+		console.log("new client");
+		players[ws.id] = {
+			x: 300,
+			y: 300
+		};
+	});*/
+	
+	
+	ws.on('message', function(data) {
+	    //var player = players[socket.id] || {};
+		console.log("received");
+	    var arr = [i, data];
+		for (var j = 0; j < players.length; j++)
+		{
+			players[j].send(arr.toString());
+			console.log("sent to" + j);
+		}
+	    //wss.sockets.send(arr);
+	    /*if (data.left) {
+	      player.x -= 1;
+	    }
+	    if (data.up) {
+	      player.y -= 1;
+	    }
+	    if (data.right) {
+	      player.x += 1;
+	    }
+	    if (data.down) {
+	      player.y += 1;
+	    }*/
+	  });
+	  
+		  
+	/*setInterval(function() {
+		wss.sockets.send('state', players);
+	}, 1000 / 60);*/
+
+});
+
