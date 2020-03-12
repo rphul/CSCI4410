@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Drag and Drop</title>
+  <link rel="stylesheet" href="p4.css">
+  <script src="p4.js"></script>
+</head>
+
+<body>
+<section id="dropbox">
+	<p>Drag and drop files here</p>
+	<form name="form2" id="form2" enctype="multipart/form-data" method = "post" action = "./cgi-bin/p4.py">
+	</form>
+    
+</section>
+  
+<section id="formbox"> Upload Files
+      <form name="form" id="form" enctype="multipart/form-data" method = "post" action = "./cgi-bin/p4.py">
+          <!--<label for="filename">Select a File to Upload</label><br />-->
+	  <p><input type="file" name="f" id="fileUpload" onchange="fileSelected();"></p>
+	  <p><input type = "submit" value = "Upload" id = "upbutton" /></p>
+          <!--<p><input type="button" onclick="uploadFIle()" value="Upload" id="upload">Upload</button>-->
+      </form>
+</section>
+
+<section id = "primebox" > Prime Numbers
+	<form name = "primeform" id = "primeform">
+		
+		<p> <input type="number" name = "num1" id = "num1" >  <input type="number" name = "num2" id = "num2" > </p>
+		<p> <input type="number" name = "num3" id = "num3" >  <input type="number" name = "num4" id = "num4" > </p>
+		<p> <input type="number" name = "num5" id = "num5" >  <input type="number" name = "num6" id = "num6" > </p>
+		<p> <input type="number" name = "num7" id = "num7" >  <input type="number" name = "num8" id = "num8" > </p>
+		
+		
+		<p> <button type = "button" id = "start"> Start </button>
+		
+		<p id = "primetotal"> Total </p>
+		<p id = "scorearea" > </p>
+	</form>
+	
+</section>
+  
+
+    <!-- <form id="form1"  enctype="multipart/form-data"method="post" action="Upload.aspx">
+        <div class="row">
+            <label for="fileToUpload">Select a File to Upload</label><br />
+            <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+        </div>
+        <div class="row">
+            <input type="button" onclick="uploadFile()" value="Upload" />
+        </div>
+    </form> -->
+</body>
+</html>
